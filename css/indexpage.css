@@ -1,0 +1,10 @@
+*{
+  margin: auto;
+}
+  body{
+    /* background-image:url(../img/cellphones.jpg); */
+    background-repeat: no-repeat;
+    width: 100%;
+    text-align: center;
+    
+  }
