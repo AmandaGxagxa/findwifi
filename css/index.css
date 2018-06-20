@@ -1,4 +1,16 @@
-/* ul{
-  background-color: black;
-} */
-.search{}
+body{
+  text-align: center;
+  background-image:url(img/cellphones.jpg)
+}
+.search{
+  width: 80%;
+  margin-top: 50px;
+  margin-right: 60px;
+}
+table{
+  width: 80%;
+
+}
+th{
+
+}
