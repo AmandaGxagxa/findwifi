@@ -19,68 +19,32 @@
   </style>
   </head>
 
-    <body>
+    <body onload="initialize()">
     <div id="map" style="height: 80%;"></div>
     <div>
       <input id="address" type="textbox" value="Sydney, NSW">
       <input type="button" value="Encode" onclick="codeAddress()">
-      <input type="button"  class="findMyLocation" value="value" onclick="findMyLocation()">
-   <script>
+
+    <script>
     var geocoder;
-  var map;
-   var loc ;
-   var foundArray =[];
-   var distances = [];
-   var myLoc;
- function initialize() {
-   geocoder = new google.maps.Geocoder();
-   var latlng = new google.maps.LatLng(-33.9249, 18.4241);
-   var mapOptions = {
+var map;
+function initialize() {
+  geocoder = new google.maps.Geocoder();
+  var latlng = new google.maps.LatLng(-34.397, 150.644);
+  var mapOptions = {
     zoom: 8,
     center: latlng
-   }
+  }
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
- }
+}
 
-  function findMyLocation()  {
-     var address = document.getElementById('address').value;
-    loc = address;
-      geocoder.geocode({
-        'address': address
-      }, function(results, status) {
-        if (status == 'OK') {
-          nearLocations();
 
-          map.setCenter(results[0].geometry.location);
-          myloc = results[0].geometry.location;
-          var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-          });
-        } else {
-          console.log("incorrect data");
-        }
-      });
-    }
-
- function codeAddress() {
- var address = getNearLocation();
-
- // findMyLocation();
+function codeAddress() {
+// var address = document.getElementById('address').value;
+var address = ['Cape town Civic, Cape town','Goodwood Admin,  Voortrekker Rd, Goodwood','1st Avenue, Eastridge, Cape Town'];
 for (var i = 0; i < address.length; i++) {
-//console.log(address[i]);
   geocoder.geocode( { 'address': address[i]}, function(results, status) {
-  if (status == 'OK') {
-    var currentLocation = results[0].geometry.location;
-
-    // console.log(results[0]);
-    console.log(currentLocation.lat());
-    console.log(currentLocation.lng());
-
-    // call geolib getDistance
-
-   calculateDistance()
-
+    if (status == 'OK') {
       map.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
           map: map,
@@ -90,67 +54,11 @@ for (var i = 0; i < address.length; i++) {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
- }
- //console.log(address);
- }
- // nearLocations data
- function getNearLocation(){
-    return foundArray;
-  }
-
-  var wifiLocation = [{
-        locationTags: 'Stock&Stocks',
-        locations: 'Stock&Stocks complex, cnr Ntlazane &Ntlakhohlaza Rds , Khayelitsha',
-        coordinates : {
-
-        }
-      }, {
-        locationTags: 'Harare',
-        locations: 'Harare Sportsfield, Bila Rd , Khayelitsha'
-      },
-      {
-        locationTags: 'Harare',
-        locations: 'Library  , Harare complex, Patha close , Khayelitsha'
-      }, {
-        locationTags: 'Harare',
-        locations: 'VPUU Building  Harare Sportsfield, Bila Rd , Khayelitsha'
-      },
-      {
-        locationTags: 'Harare',
-        locations: ' Feel Good Store Harare Sportsfield, Bila Rd , Khayelitsha'
-      },{
-      locationTags: 'Site C',
-        locations: 'Library , Site C complex, cnr Njongo & Solomon Tshuku ave, Khyelitsha'
-      },{
-        locationTags:'Site C',
-        locations   : 'Youth Clinic , Site C complex,cnrNjongo & Solomon Tshuku ave, Khyelitsha'
-      }
-      ]
-  // finding all location near my location
-  var nearLocations = function(){
-      foundArray = [];
-    for (var i = 0; i < wifiLocation.length; i++) {
-      if (loc.includes(wifiLocation[i].locationTags)) {
-        foundArray.push(wifiLocation[i].locations);
-      }
-    }
-    // console.log("testing this below console");
-    // console.log(foundArray);
-    return foundArray;
-  }
-
-   function calculateDistance(userLoc, coord){
-      var temp = geolib.getDistance(
-    {latitude: 51.5103, longitude: 7.49347},
-    {latitude: "51° 31' N", longitude: "7° 28' E"}
-);
-   }
-
+}
+}
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU7dAqGQjaF_XO8UOBkAJBx9_pd7gnbtQ&callback=initialize"
    async defer></script>
-   <!-- <script type="text/javascript" src="./js/logic.js"> -->
-   </script>
   </body>
 </html>
