@@ -49,11 +49,11 @@ footer{
 
 }
 
-.pic1{
-    border-radius: 30% ;
+img .pic1{
+    /* border-radius: 30% ; */
     margin-bottom: 100px;
     margin-bottom: 50px;
-    width: 250px;
+    /* width: 100%; */
 
 }
 #theTeam{
