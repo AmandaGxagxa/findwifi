@@ -1,92 +1,45 @@
 
-:root{
-    --shadow : 2px 5px 2px rgba(0,0,0,0.5);
-}
-
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5re;
-    text-align : center;
-}
 
+}
 .container{
-    margin-top : 2rem;
+   margin-top: 2rem;
+   line-height: 1.5;
+   text-align: center;
+
 }
 
 img{
-    width:150px;
-    height: 100px;
-    margin: auto;
+   width: 50%;
+   margin: 0;
 }
 
 
-.heade img{
-    width:200px;
-    height : 200px;
-    margin: auto;
+
+.heade {
+   margin-bottom: 2rem;
 }
 
-.heade h4{
-    /* text-shadow: var(--shadow); */
+.heading{
+   font-family: Arial, Helvetica, sans-serif;
 }
 
-.logo{
-    width: 100%;
+.question p{
+   margin-top : 5rem;
+   font-size : 23px;
+}
+
+.question .side{
+   width: 50%;
+
+}
+.last{
+   width: 15%;
 }
 
 
-.question{
-    width:80%;
-    margin: auto;
+footer{
+   background-color: #333;
+   color: white;
+   text-align: center;
 }
-
-.question img{
-    width: 50px;
-    height: 50px
-}
-
-/* // Extra small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
-
-// Small devices (landscape phones, 576px and up) */
-/* @media (min-width: 576px) { ... } */
-
-/* // Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    
-    .heade{
-        margin-bottom : 2rem;
-    }
-    .heade img{
-       width : 10rem;
-       height: 7rem;
-       margin-left: 30rem;
-    }
-
-    .heade h4{
-        font-size : 30px;
-        padding-top : 3rem;
-    }
-
-    .question{
-        margin: auto;
-        align-items: center;
-    }
-    .question p{
-        font-weight: bold;
-        font-style: italic;
-    }
-
-    .question img{
-        width: 8rem;
-        height: 5rem;
-    }
-    
-    
-}
-
-/* // Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { ... }
-
-/* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { ... }
