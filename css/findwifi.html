@@ -2,15 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>GEO location</title>
-    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <title>GEO location</title
+    <script src="https://cdn.jsdelivr.net/npm/geolib@2.0.24/dist/geolib.min.js"></script>
     <style>
-    /* Always set the map height explicitly to define the size of the div
-     * element that contains the map. */
     #map {
       height: 100%;
     }
-    /* Optional: Makes the sample page fill the window. */
     html, body {
       height: 100%;
       margin: 0;
@@ -64,6 +61,7 @@
         'address': address
       }, function(results, status) {
         if (status == 'OK') {
+          calculateDistance();
           nearLocations();
 
           map.setCenter(results[0].geometry.location);
@@ -134,36 +132,74 @@ for (var i = 0; i < address.length; i++) {
     return foundArray;
   }
 
+
+ function calculateDistance(){
+        
+     for (let i = 0; i < wifiLocation.length; i++) {
+   var distance= geolib.getDistance(
+    {latitude:-34.057928, longitude:18.671306},
+          {latitude:wifiLocation[i].latitude, longitude:wifiLocation[i].longitude}
+      );
+      console.log(wifiLocation[i].locations+" "+distance /1000 +" m");
+      
+       }
+    
+      return distance;
+ }
+
+
+
+
+
+
   var wifiLocation = [{
         locationTags: 'Stock&Stocks',
 <<<<<<< HEAD
         locations: 'Stock&Stocks complex, cnr Ntlazane &Ntlakhohlaza Rds , Khayelitsha'
 =======
         locations: 'Stock&Stocks complex, cnr Ntlazane &Ntlakhohlaza Rds , Khayelitsha',
+<<<<<<< HEAD:findwifi.html
         coordinates : {
 
         }
 >>>>>>> origin/siyaBranch
+=======
+        longitude: 18.6691079,
+         latitude:-34.0503651
+>>>>>>> ee04586ce7b37ee8925bcef1867e9851d0473941:css/findwifi.html
       }, {
         locationTags: 'Harare',
-        locations: 'Harare Sportsfield, Bila Rd , Khayelitsha'
+        locations: 'Harare Sportsfield, Bila Rd , Khayelitsha',
+        longitude: 18.507819,
+         latitude:-34.0503651
       },
       {
         locationTags: 'Harare',
-        locations: 'Library  , Harare complex, Patha close , Khayelitsha'
+        locations: 'Library  , Harare complex, Patha close , Khayelitsha',
+        longitude: 18.6691079,
+         latitude:-34.0509851
       }, {
         locationTags: 'Harare',
-        locations: 'VPUU Building  Harare Sportsfield, Bila Rd , Khayelitsha'
+        locations: 'VPUU Building  Harare Sportsfield, Bila Rd , Khayelitsha',
+        longitude: 18.6691079,
+         latitude:-34.0503651
       },
       {
         locationTags: 'Harare',
-        locations: ' Feel Good Store Harare Sportsfield, Bila Rd , Khayelitsha'
+        locations: ' Feel Good Store Harare Sportsfield, Bila Rd , Khayelitsha',
+        longitude: 18.6691079,
+         latitude:-34.0503651
       },{
       locationTags: 'Site C',
-        locations: 'Library , Site C complex, cnr Njongo & Solomon Tshuku ave, Khyelitsha'
+        locations: 'Library , Site C complex, cnr Njongo & Solomon Tshuku ave, Khyelitsha',
+        longitude: 18.6691079,
+         latitude:-34.0503651
       },{
         locationTags:'Site C',
-        locations   : 'Youth Clinic , Site C complex,cnrNjongo & Solomon Tshuku ave, Khyelitsha'
+        locations   : 'Youth Clinic , Site C complex,cnrNjongo & Solomon Tshuku ave, Khyelitsha',
+        // cords    : {lat:-34.0503651, lng:18.6691079}
+        longitude: 18.6691079,
+         latitude:-34.0503651
       }
       ]
   // finding all location near my location
