@@ -3,16 +3,10 @@ var myLocationbtn  = document.querySelector('.findMyLocationBtn');
 var  displayMap = document.querySelector('#map');
 var viewWithOutMap = document.querySelector('.no-map');
 var nearestPoints = document.querySelector('.nearestPoints').innerHTML;
-
 var templateCompiler = Handlebars.compile(nearestPoints);
-
 var displaydata = document.querySelector('.tabledisplay');
 
-
-
-
   var wifi = findWifi();
-
    
   window.addEventListener('load',function(){
     let address = enteredAddress.value;
