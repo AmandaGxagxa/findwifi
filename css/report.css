@@ -1,0 +1,48 @@
+*{
+  margin: auto;
+  text-align: center;
+}
+
+
+
+.navs{
+  margin-bottom: 1rem;
+}
+#span{
+  width: 110px;
+  margin-left: -01px;
+}
+
+.logo{
+  height: 140px;
+  width: 150px;
+  margin-right: 20%;
+  float: right;
+}
+.report{
+  width: 60%;
+  text-align: center;
+  font-style: oblique;
+  font-weight: bolder;
+  font-size: 30px;
+}
+.input1{
+  margin-bottom: 10px;
+}
+
+.text{
+  margin-bottom: 30px;
+}
+
+.btn{
+
+}
+
+footer{
+  background-color: #333;
+  color: white;
+  margin-top: 3rem;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
