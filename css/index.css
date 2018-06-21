@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-body{
-  body {
-      background-image: url("Hand_holding_smartphone_thumb800.jpg");
 
-  }
+body{
+
+      background-image: url("Hand_holding_smartphone_thumb800.jpg");
 }
 .container {
     position: left;
@@ -24,9 +22,9 @@ h1{
   font-weight: bolder;
   font-size: 30px;
   text-align: center;
-=======
-<<<<<<< HEAD
-body{
+}
+
+/* body{
   text-align: center;
   background-image:url(img/cellphones.jpg)
 }
@@ -39,19 +37,4 @@ table{
   width: 80%;
 
 }
-th{
-=======
-
-body{
-  text-align: center;
-}
-ul{
-  background-color:
-}
-.search{
-width: 60%;
-margin-right: 100px;
->>>>>>> Amanda
-
->>>>>>> 2a003c861de179150e6c05809545f45ea115a712
-}
+ */

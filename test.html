@@ -5,12 +5,10 @@
     <title>GEO location</title>
     <!-- <link rel="stylesheet" href="/style.css"> -->
     <style>
-    /* Always set the map height explicitly to define the size of the div
-     * element that contains the map. */
     #map {
       height: 100%;
     }
-    /* Optional: Makes the sample page fill the window. */
+  
     html, body {
       height: 100%;
       margin: 0;
@@ -26,13 +24,14 @@
       <input type="button" value="Encode">
       <input type="button"  class="findMyLocation" value="value">
         
-      <script type="text/javascript" src="./js/logic.js"> </script>
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU7dAqGQjaF_XO8UOBkAJBx9_pd7gnbtQ&callback=Wifi.initialize().initialize"
-      async defer></script>
-  
-     <script type="text/javascript" src="./js/findWifi-dom.js">
-     </script>
 
-
+      <!-- async -->
+    
+  <script type="text/javascript" src="./js/logic.js"  > </script>
+     <script type="text/javascript" src="./js/findWifi-dom.js" ></script>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU7dAqGQjaF_XO8UOBkAJBx9_pd7gnbtQ&callback=wifi.initialize"
+     async  defer ></script>
+    
+     
   </body>
 </html>
