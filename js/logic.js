@@ -1,5 +1,4 @@
 function findWifi(){
-
 // initialize location
   var geocoder;
   var map;
@@ -17,12 +16,9 @@ function findWifi(){
   }
 
   //finding my own location function
-  function findMyLocation()  {
-     var address = document.getElementById('address').value;
-    console.log(address);
-     location = address;
+  function findMyLocation(value)  {
       geocoder.geocode({
-        'address': address
+        'address': value
       }, function(results, status) {
         if (status == 'OK') {
           map.setCenter(results[0].geometry.location);
@@ -30,6 +26,7 @@ function findWifi(){
             map: map,
             position: results[0].geometry.location
           });
+          calculateDistance();
         } else {
           console.log("incorrect data");
         }
@@ -37,30 +34,86 @@ function findWifi(){
     }
   
 // location data
-  var wifiLocation = [{
-        locationTags: 'Stock&Stocks',
-        location: 'Stock&Stocks complex, cnr Ntlazane &Ntlakhohlaza Rds , Khyelitsha'
-      }, {
-        locationTags: 'Harare',
-        location: 'Harare Sportsfield, Bila Rd , Khylelitsha'
-      },
-      {
-        locationTags: 'Harare',
-        location: 'Harare Sportsfield, Bila Rd , Khylelitsha'
-      }, {
-        locationTags: 'Harare',
-        location: 'VPUU Building  Harare Sportsfield, Bila Rd , Khylelitsha'
-      }
-      ]
-  // finding all location near my location
-  const nearLocations = () => {
-    for (var i = 0; i < wifiLocation.length; i++) {
-      if (location.includes(wifiLocation[i].locationTags)) {
-        foundArray.push(wifiLocation[i].location);
-      }
-    }
-    return foundArray;
+var wifiLocation = [{
+  locationTags: 'Stock&Stocks',
+  locations: 'Stock&Stocks complex, cnr Ntlazane &Ntlakhohlaza Rds , Khayelitsha',
+  longitude: 18.6691079,
+   latitude:-34.0503651
+}, {
+  locationTags: 'Harare',
+  locations: 'Harare Sportsfield, Bila Rd , Khayelitsha',
+  longitude: 18.507819,
+   latitude:-34.0503651
+},
+{
+  locationTags: 'Harare',
+  locations: 'Library  , Harare complex, Patha close , Khayelitsha',
+  longitude: 18.6691079,
+   latitude:-34.0509851
+}, {
+  locationTags: 'Harare',
+  locations: 'VPUU Building  Harare Sportsfield, Bila Rd , Khayelitsha',
+  longitude: 18.6691079,
+   latitude:-34.0503651
+},
+{
+  locationTags: 'Harare',
+  locations: ' Feel Good Store Harare Sportsfield, Bila Rd , Khayelitsha',
+  longitude: 18.6691079,
+   latitude:-34.0503651
+},{
+locationTags: 'Site C',
+  locations: 'Library , Site C complex, cnr Njongo & Solomon Tshuku ave, Khyelitsha',
+  longitude: 18.6691079,
+   latitude:-34.0503651
+},{
+  locationTags:'Site C',
+  locations   : 'Youth Clinic , Site C complex,cnrNjongo & Solomon Tshuku ave, Khyelitsha',
+  // cords    : {lat:-34.0503651, lng:18.6691079}
+  longitude: 18.6691079,
+   latitude:-34.0503651
+}
+]
+
+var nearLocations = function(){
+  foundArray = [];
+for (var i = 0; i < wifiLocation.length; i++) {
+  if (loc.includes(wifiLocation[i].locationTags)) {
+    foundArray.push(wifiLocation[i].locations);
   }
+}
+
+return foundArray;
+}
+
+
+
+function calculateDistance(){
+  var locationDistance ={};
+  for (let i = 0; i < wifiLocation.length; i++) {
+var distance= geolib.getDistance(
+ {latitude:-34.057928, longitude:18.671306},
+       {latitude:wifiLocation[i].latitude, longitude:wifiLocation[i].longitude}
+   );
+   console.log(wifiLocation[i].locations+" "+distance /1000 +" m");
+     if(locationDistance[wifiLocation[i].locations] === undefined){
+        locationDistance[wifiLocation[i].locations]=distance /1000;
+     }
+   
+    }
+   console.log(locationDistance)
+   return locationDistance;
+}
+
+
+
+
+
+
+
+
+
+
  // nearLocations data
   function getNearLocation(){
     return foundArray;
@@ -86,7 +139,8 @@ function findWifi(){
 
 return{
   initialize,
-  findMyLocation
+  findMyLocation,
+  calculateDistance
 
 }
 
