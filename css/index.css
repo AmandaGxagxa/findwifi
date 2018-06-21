@@ -1,7 +1,9 @@
-<<<<<<< HEAD
+
+ *{
+   margin: auto;
+ }
  body{
-   height: auto;
-   align-content: center;
+
  }
 
   h2{
@@ -9,11 +11,17 @@
   width: 50%;
 
 }
+.ourName{
+  padding:1em;
+  color: #1a263a;
+  font-weight: bold;
+  font-family: 'Shrikhand', cursive;
+}
 
-.container{
-    height: 50% ;
-    width: 50% ;
-    padding: 10px ;
+img{
+   width: 140px;
+   height: 100px ;
+   margin: 0;
 
 }
 .img-fluid{
@@ -24,69 +32,24 @@
 
 }
 
-.About{
-    margin-top: 100px ;
+#us{
+    margin-top: 10px ;
 
 }
 
 ul{
   margin-top: 120px;
-=======
-<<<<<<< HEAD
-body{
-  body {
-      background-image: url("Hand_holding_smartphone_thumb800.jpg");
-
-  }
-}
-.container {
-    position: left;
-    width: 100%;
-    font-size: 20px;
-    padding: 30px;
-    text-align: center;
-    margin-top: 3em;
 }
 
-.header {
-    padding: 20px;
-    text-align: center;
+
+footer{
+   background-color: #333;
+   color: white;
+   text-align: center;
 }
 
-h1{
+.pic1{
+    border-radius: 30% ;
+    margin-bottom: auto;
 
-  font-weight: bolder;
-  font-size: 30px;
-  text-align: center;
-=======
-<<<<<<< HEAD
-body{
-  text-align: center;
-  background-image:url(img/cellphones.jpg)
-}
-.search{
-  width: 80%;
-  margin-top: 50px;
-  margin-right: 60px;
-}
-table{
-  width: 80%;
-
-}
-th{
-=======
-
-body{
-  text-align: center;
-}
-ul{
-  background-color:
-}
-.search{
-width: 60%;
-margin-right: 100px;
->>>>>>> Amanda
-
->>>>>>> 2a003c861de179150e6c05809545f45ea115a712
->>>>>>> 591fd2632207e8c2d06ea06adab1c412add9c5b7
 }
