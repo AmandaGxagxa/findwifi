@@ -53,9 +53,16 @@ footer{
     border-radius: 30% ;
     margin-bottom: 100px;
     margin-bottom: 50px;
+    width: 250px;
 
 }
-h2{
-  padding-top: 75px ;
-  padding-right: 300px;
+#theTeam{
+  /* padding-top: 100px ;
+  /* padding-right: 300px; */
+}
+#team{
+  margin: 0;
+  /* padding-bottom: 10px;
+  padding-top: 80px; */
+
 }
