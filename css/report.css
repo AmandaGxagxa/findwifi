@@ -1,9 +1,14 @@
 *{
-  margin: auto;
+  /* margin: auto; */
   text-align: center;
 }
 
-
+form{
+   margin: auto;
+}
+.btn-info{
+margin-top: 2rem;
+}
 
 .navs{
   margin-bottom: 1rem;

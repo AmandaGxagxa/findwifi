@@ -1,6 +1,6 @@
-*{
+/* *{
   margin: auto;
-}
+} */
 
 
 
@@ -10,6 +10,7 @@
 form{
   width: 60%;
   margin-bottom: 3rem;
+  margin: auto;
 }
 h1{
   margin-bottom: 20px;
