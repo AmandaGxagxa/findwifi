@@ -17,36 +17,19 @@
   </head>
 
     <body>
-    
+
     <div id="map"    style="height: 80%;">
-     
+
 
     </div>
-     <script>
-     // initialize location
-  var geocoder;
-  var map;
-  var location;
-  var foundArray =[];
 
-  function initialize() {
-    geocoder = new google.maps.Geocoder();
-    var latlng = new google.maps.LatLng(33.9249, -18.4241);
-    var mapOptions = {
-      zoom: 8,
-      center: latlng
-    }
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
-  }
-     
-     </script>
-     
-              
-      
+
+
+
     <script type="text/javascript" src="./js/logic.js"> </script>
     <script type="text/javascript" src="./js/findWifi-dom.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU7dAqGQjaF_XO8UOBkAJBx9_pd7gnbtQ&callback=wifi.initialize"
     async defer></script>
-  
+
   </body>
 </html>

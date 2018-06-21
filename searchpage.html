@@ -10,8 +10,18 @@
   <script src="https://cdn.jsdelivr.net/npm/geolib@2.0.24/dist/geolib.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <style>
+ #map {
+   height: 100%;
+ }
+ html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+</style>
 
   <script type="text/x-template" class="nearestPoints">
     <thead>
@@ -21,11 +31,11 @@
       </tr>
     </thead>
     {{#each loctionfound}}
-    
+
     <tbody insertData>
       <tr>
         <td>{{@key}}</td>
-        <td>{{this}}</td>
+        <td>{{this}}  meters</td>
       </tr>
     </tbody>
 
@@ -39,16 +49,13 @@
       <div class="col-12">
         <ul class="nav justify-content-end navbar-dark bg-dark">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="searchpage.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Get wifi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="#">Feedback</a></li>
+            <a class="nav-link " href="feedback.html">Feedback</a></li>
         </ul>
       </div>
     </div>
@@ -78,22 +85,24 @@
             <a href="#tbl"><button class="btn btn-primary no-map" type="button"> no map</button></a>
           </div>
           <div class="col">
-            <a href="#tbl"><button class="btn btn-success with-map" type="button">show map</button></a>
+            <a href="#map"><button class="btn btn-success with-map" type="button">show map</button></a>
           </div>
-          <div id="map">
 
-          </div>
 
         </div>
         <div class="row " id='tbl'>
-          <table  class='tabledisplay'>
-         
+          <table class='tabledisplay'>
+
           </table>
         </div>
       </div>
 
     </div>
   </div>
+  <div id="map"    style="height: 80%;">
+
+
+ </div>
 
   <footer>
     <p>Copyright &copy; 2018. <em>Developed by LAZAS</em> </p>

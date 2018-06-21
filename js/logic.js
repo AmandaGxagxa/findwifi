@@ -2,14 +2,14 @@ function findWifi(){
 // initialize location
   var geocoder;
   var map;
-  var location;
+  var address;
   var foundArray =[];
-
+  var getLocationDis ={};
   function initialize() {
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(33.9249, -18.4241);
     var mapOptions = {
-      zoom: 8,
+      zoom: 15,
       center: latlng
     }
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
@@ -17,22 +17,26 @@ function findWifi(){
 
   //finding my own location function
   function findMyLocation(value)  {
+       address = value;
       geocoder.geocode({
         'address': value
       }, function(results, status) {
+         var currentPosition = results[0].geometry.location;
         if (status == 'OK') {
           map.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
             map: map,
             position: results[0].geometry.location
           });
-          calculateDistance();
+
+
+          return calculateDistance(currentPosition.lat(), currentPosition.lng());
         } else {
           console.log("incorrect data");
         }
       });
     }
-  
+
 // location data
 var wifiLocation = [{
   locationTags: 'Stock&Stocks',
@@ -58,7 +62,7 @@ var wifiLocation = [{
 },
 {
   locationTags: 'Harare',
-  locations: ' Feel Good Store Harare Sportsfield, Bila Rd , Khayelitsha',
+  locations: 'Feel Good Store Harare Sportsfield, Bila Rd , Khayelitsha',
   longitude: 18.6691079,
    latitude:-34.0503651
 },{
@@ -75,37 +79,43 @@ locationTags: 'Site C',
 }
 ]
 
-var nearLocations = function(){
+var nearLocations = function(value){
   foundArray = [];
-for (var i = 0; i < wifiLocation.length; i++) {
-  if (loc.includes(wifiLocation[i].locationTags)) {
-    foundArray.push(wifiLocation[i].locations);
+  if (value!=='') {
+     for (var i = 0; i < wifiLocation.length; i++) {
+       if (value.includes(wifiLocation[i].locationTags)) {
+         foundArray.push(wifiLocation[i].locations);
+       }
+     }
   }
-}
+
 
 return foundArray;
 }
 
 
 
-function calculateDistance(){
+function calculateDistance(userLatitude, userLongitude){
   var locationDistance ={};
   for (let i = 0; i < wifiLocation.length; i++) {
 var distance= geolib.getDistance(
- {latitude:-34.057928, longitude:18.671306},
+ {latitude:userLatitude, longitude:userLongitude},
        {latitude:wifiLocation[i].latitude, longitude:wifiLocation[i].longitude}
    );
-   console.log(wifiLocation[i].locations+" "+distance /1000 +" m");
-     if(locationDistance[wifiLocation[i].locations] === undefined){
+
+     if(locationDistance[wifiLocation[i].locations] === undefined && address.includes(wifiLocation[i].locationTags)){
         locationDistance[wifiLocation[i].locations]=distance /1000;
      }
-   
+
     }
-   console.log(locationDistance)
+     getLocationDis = locationDistance;
+    console.log(locationDistance)
    return locationDistance;
 }
 
-
+ function getLocationDistance(){
+    return getLocationDis;
+}
 
 
 
@@ -122,7 +132,9 @@ var distance= geolib.getDistance(
   function codeAddress() {
   //var address = document.getElementById('address').value;
   var address = getNearLocation();
+
   for (var i = 0; i < address.length; i++) {
+       console.log("All near location"+address[i]);
     geocoder.geocode( { 'address': address[i]}, function(results, status) {
       if (status == 'OK') {
         map.setCenter(results[0].geometry.location);
@@ -140,7 +152,10 @@ var distance= geolib.getDistance(
 return{
   initialize,
   findMyLocation,
-  calculateDistance
+  calculateDistance,
+  getLocationDistance,
+  nearLocations,
+  codeAddress
 
 }
 

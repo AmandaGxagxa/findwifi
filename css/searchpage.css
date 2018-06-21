@@ -1,8 +1,7 @@
 *{
   margin: auto;
-  text-align: center;
 }
-      
+
 
 
 .navs{
@@ -18,18 +17,25 @@ h1{
 
 table{
   width: 70%;
+   text-align: center;
 }
 
 .btnz{
   margin-bottom : 2rem;
+  text-align: center;
+
+}
+
+.tabledisplay{
+   text-align: left;
+   /* min-height: 260px; */
 }
 
 
 footer{
+
   background-color: #333;
   color: white;
   margin-top: 3rem;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
+   text-align: center;
 }
