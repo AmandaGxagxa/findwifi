@@ -30,6 +30,11 @@
   var map;
    var loc ;
    var foundArray =[];
+<<<<<<< HEAD
+=======
+   var distances = [];
+   var myLoc;
+>>>>>>> origin/siyaBranch
  function initialize() {
    geocoder = new google.maps.Geocoder();
    var latlng = new google.maps.LatLng(-33.9249, 18.4241);
@@ -39,6 +44,7 @@
    }
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
  }
+<<<<<<< HEAD
 
   function findMyLocation()  {
      var address = document.getElementById('address').value;     
@@ -49,6 +55,20 @@
         if (status == 'OK') {
           nearLocations();
           map.setCenter(results[0].geometry.location);
+=======
+
+  function findMyLocation()  {
+     var address = document.getElementById('address').value;
+    loc = address;
+      geocoder.geocode({
+        'address': address
+      }, function(results, status) {
+        if (status == 'OK') {
+          nearLocations();
+
+          map.setCenter(results[0].geometry.location);
+          myloc = results[0].geometry.location;
+>>>>>>> origin/siyaBranch
           var marker = new google.maps.Marker({
             map: map,
             position: results[0].geometry.location
@@ -61,6 +81,7 @@
 
  function codeAddress() {
  var address = getNearLocation();
+<<<<<<< HEAD
  console.log(address);
  findMyLocation();
 for (var i = 0; i < address.length; i++) {
@@ -75,6 +96,23 @@ console.log(address[i]);
     console.log(currentLocation.lng());
 
     // console.log(results[0].geometry.location);
+=======
+
+ // findMyLocation();
+for (var i = 0; i < address.length; i++) {
+//console.log(address[i]);
+  geocoder.geocode( { 'address': address[i]}, function(results, status) {
+  if (status == 'OK') {
+    var currentLocation = results[0].geometry.location;
+
+    // console.log(results[0]);
+    console.log(currentLocation.lat());
+    console.log(currentLocation.lng());
+
+    // call geolib getDistance
+
+   calculateDistance()
+>>>>>>> origin/siyaBranch
 
       map.setCenter(results[0].geometry.location);
       var marker = new google.maps.Marker({
@@ -86,6 +124,10 @@ console.log(address[i]);
     }
   });
  }
+<<<<<<< HEAD
+=======
+ //console.log(address);
+>>>>>>> origin/siyaBranch
  }
  // nearLocations data
  function getNearLocation(){
@@ -94,7 +136,14 @@ console.log(address[i]);
 
   var wifiLocation = [{
         locationTags: 'Stock&Stocks',
+<<<<<<< HEAD
         locations: 'Stock&Stocks complex, cnr Ntlazane &Ntlakhohlaza Rds , Khayelitsha'
+=======
+        locations: 'Stock&Stocks complex, cnr Ntlazane &Ntlakhohlaza Rds , Khayelitsha',
+        coordinates : {
+
+        }
+>>>>>>> origin/siyaBranch
       }, {
         locationTags: 'Harare',
         locations: 'Harare Sportsfield, Bila Rd , Khayelitsha'
@@ -125,10 +174,25 @@ console.log(address[i]);
         foundArray.push(wifiLocation[i].locations);
       }
     }
+<<<<<<< HEAD
     console.log(foundArray);
     return foundArray;
   }
 
+=======
+    // console.log("testing this below console");
+    // console.log(foundArray);
+    return foundArray;
+  }
+
+   function calculateDistance(userLoc, coord){
+      var temp = geolib.getDistance(
+    {latitude: 51.5103, longitude: 7.49347},
+    {latitude: "51° 31' N", longitude: "7° 28' E"}
+);
+   }
+
+>>>>>>> origin/siyaBranch
 
     </script> 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU7dAqGQjaF_XO8UOBkAJBx9_pd7gnbtQ&callback=initialize"
