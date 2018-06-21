@@ -1,0 +1,45 @@
+
+body{
+
+}
+.container{
+   margin-top: 2rem;
+   line-height: 1.5;
+   text-align: center;
+
+}
+
+img{
+   width: 50%;
+   margin: 0;
+}
+
+
+
+.heade {
+   margin-bottom: 2rem;
+}
+
+.heading{
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.question p{
+   margin-top : 5rem;
+   font-size : 23px;
+}
+
+.question .side{
+   width: 50%;
+
+}
+.last{
+   width: 15%;
+}
+
+
+footer{
+   background-color: #333;
+   color: white;
+   text-align: center;
+}
