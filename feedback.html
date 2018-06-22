@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="css/report.css">
   <link rel="stylesheet" href="./css/index.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+   <script type="text/x-template" class="messageTemplate">
+      <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="modal-dialog modal-sm" role="document">
+       <div class="modal-content">
+           <span class="msg">{{message}}</span>
+         <a href="searchpage.html"><button class="btn btn-success" type="button" name="button">Home</button></a>
+        </div>
+   </script>
 </head>
 
 <body>
@@ -38,33 +47,41 @@
   </div>
 
 
-  <form class="report" method="post">
+  <form class="report" >
     <div class="input-group input1">
       <div class="input-group-prepend ">
         <span class="input-group-text" id="">Name</span>
       </div>
-      <input type="text" class="form-control" required>
+      <input type="text" class="form-control inputName" >
 
     </div>
     <div class="input-group text">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="" required>Location</span>
+        <span class="input-group-text" id="" >Location</span>
       </div>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control inputLoc" >
     </div>
 
 
         <span class="input-group-text" id="span">Message...</span>
 
-      <textarea class="form-control" aria-label="With textarea"></textarea>
+      <textarea class="form-control inputMsg" aria-label="With textarea"></textarea>
 
-        <input type="submit" class="btn btn-info" value="Submit">
 
-    
+
+
+
+</div>
+</div>
+
 
   </form>
+  <button type="button" class="btn btn-primary btnSubmit" data-toggle="modal" data-target=".bs-example-modal-sm">Submit</button>
 
 
+   <div class="displayPop">
+
+   </div>
 
 
   </div>
@@ -74,6 +91,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="js/feedback.js" charset="utf-8"></script>
 </body>
 
 </html>
