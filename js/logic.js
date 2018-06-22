@@ -46,37 +46,104 @@ var wifiLocation = [{
 }, {
   locationTags: 'Harare',
   locations: 'Harare Sportsfield, Bila Rd , Khayelitsha',
-  longitude: 18.507819,
-   latitude:-34.0503651
+  longitude: 18.668368,
+   latitude:-34.053422
 },
 {
   locationTags: 'Harare',
   locations: 'Library  , Harare complex, Patha close , Khayelitsha',
-  longitude: 18.6691079,
-   latitude:-34.0509851
+  longitude: 18.6637507,
+   latitude:-34.0577087
 }, {
   locationTags: 'Harare',
   locations: 'VPUU Building  Harare Sportsfield, Bila Rd , Khayelitsha',
-  longitude: 18.6691079,
-   latitude:-34.0503651
+  longitude: 18.6691122,
+   latitude:-34.0579279
 },
 {
   locationTags: 'Harare',
   locations: 'Feel Good Store Harare Sportsfield, Bila Rd , Khayelitsha',
-  longitude: 18.6691079,
-   latitude:-34.0503651
+  longitude: 18.668368,
+   latitude:-34.053422
 },{
 locationTags: 'Site C',
   locations: 'Library , Site C complex, cnr Njongo & Solomon Tshuku ave, Khyelitsha',
-  longitude: 18.6691079,
-   latitude:-34.0503651
+  longitude: 18.6478817,
+   latitude: -34.0153373
 },{
   locationTags:'Site C',
   locations   : 'Youth Clinic , Site C complex,cnrNjongo & Solomon Tshuku ave, Khyelitsha',
+  longitude: 18.6482309,
+   latitude:-34.0134739
+},
+{
+  locationTags:'Lentegeur',
+  locations   : 'Lentegeur Civic ,Merrydale Ave , Lentegeur',
+  longitude: 18.607194,
+   latitude:-34.034331,
+},
+{
+  locationTags:'Lentegeur',
+  locations   : 'Lentegeur Swimming pool ,Merrydale Ave , Lentegeur',
+  longitude: 18.6061766,
+   latitude:34.0335538
+},
+{
+  locationTags:'Lentegeur',
+  locations   : 'Pole , Sunflower street , Lentegeur',
+  longitude: 18.604938,
+   latitude:-34.0346789
+},{
+  locationTags:'Cape Town',
+  locations   : 'Cape town Civic centre',
+
+  longitude: 18.4268048,
+   latitude:-33.9209337
+},
+{
+  locationTags:'Cape Town',
+  locations   : 'Darling Street , CapeTown',
+  longitude: 18.4233388,
+   latitude:-33.9262819
+},
+{
+  locationTags:'Durbanville',
+  locations   : 'Queen Street , Durbanville',
+  longitude: 18.6441301,
+   latitude:-33.8304019
+},
+{
+  locationTags:'Durbanville',
+  locations   : 'Queen Street , Durbanville',
+  longitude: 18.6441301,
+   latitude:-33.8304019
+},
+{
+  locationTags:'Goodwood',
+  locations   : 'cnr Mcdonald & Dingle Rd , Goodwood',
   // cords    : {lat:-34.0503651, lng:18.6691079}
-  longitude: 18.6691079,
-   latitude:-34.0503651
-}
+  longitude: 18.548569,
+   latitude:33.9103939
+},
+{
+  locationTags:'Goodwood',
+  locations   : 'Richmond street , goodwood',
+  // cords    : {lat:-34.0503651, lng:18.6691079}
+  longitude: 18.5599535,
+   latitude:-33.9006165
+},
+{
+  locationTags:'Nyanga',
+  locations   : 'Freedom Square, Nyanga',
+  // cords    : {lat:-34.0503651, lng:18.6691079}
+  longitude: 18.5846321,
+   latitude:-33.99557
+},
+
+
+
+
+
 ]
 
 var nearLocations = function(value){
