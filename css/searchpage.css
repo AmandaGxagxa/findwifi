@@ -32,6 +32,11 @@ table{
    /* min-height: 260px; */
 }
 
+#map{
+  width: 60%;
+  height: 400px;
+  margin: auto;
+}
 
 footer{
 

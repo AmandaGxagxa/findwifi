@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>search page</title>
   <link rel="stylesheet" href="css/searchpage.css">
   <!-- <link rel="stylesheet" href="css/skeleton.css">
@@ -12,16 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-  <style>
- #map {
-   height: 100%;
- }
- html, body {
-   height: 100%;
-   margin: 0;
-   padding: 0;
- }
-</style>
+
 
   <script type="text/x-template" class="nearestPoints">
     <thead>
@@ -85,11 +76,10 @@
             <a href="#tbl"><button class="btn btn-primary no-map" type="button"> no map</button></a>
           </div>
           <div class="col">
-            <a href="#map"><button class="btn btn-success with-map" type="button">show map</button></a>
+            <a href="#map"><button class="btn btn-success with-map" type="button" data-toggle="collapse" data-target="#displayMap" aria-expanded="false" aria-controls="collapseExample">show map</button></a>
           </div>
-
-
         </div>
+
         <div class="row " id='tbl'>
           <table class='tabledisplay'>
 
@@ -99,11 +89,12 @@
 
     </div>
   </div>
-  <div id="map"    style="height: 80%;">
 
-
- </div>
-
+  <div class="collapse" id="displayMap">
+      <div class="card card-body" id="map">
+        
+      </div>
+  </div>
   <footer>
     <p>Copyright &copy; 2018. <em>Developed by LAZAS</em> </p>
   </footer>
