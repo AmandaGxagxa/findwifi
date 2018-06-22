@@ -2,14 +2,20 @@
   /* margin: auto; */
   text-align: center;
 }
-
+.msg{
+   color:green;
+}
 form{
    margin: auto;
 }
 .btn-info{
 margin-top: 2rem;
 }
-
+.btnSubmit{
+   margin: auto;
+   margin-left: 28em;
+   margin-top: 1em;
+}
 .navs{
   margin-bottom: 1rem;
 }
