@@ -15,21 +15,12 @@
 
 
   <script type="text/x-template" class="nearestPoints">
-    <thead>
-      <tr>
-        <th>Address</th>
-        <th>Distance</th>
-      </tr>
-    </thead>
+    
     {{#each loctionfound}}
-
-    <tbody insertData>
       <tr>
         <td>{{@key}}</td>
         <td>{{this}}  meters</td>
       </tr>
-    </tbody>
-
     {{/each}}
   </script>
 </head>
@@ -81,8 +72,16 @@
         </div>
 
         <div class="row " id='tbl'>
-          <table class='tabledisplay'>
+          <table >
+              <thead>
+                  <tr>
+                    <th>Address</th>
+                    <th>Distance</th>
+                  </tr>
+                </thead>
+                <tbody class='tabledisplay'>
 
+                </tbody>
           </table>
         </div>
       </div>
@@ -95,6 +94,8 @@
         
       </div>
   </div>
+  
+  <div class="w-100"></div>
   <footer>
     <p>Copyright &copy; 2018. <em>Developed by LAZAS</em> </p>
   </footer>
