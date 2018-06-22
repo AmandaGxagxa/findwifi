@@ -64,25 +64,28 @@
         </div>
         <div class="row btnz">
           <div class="col">
-            <a href="#tbl"><button class="btn btn-primary no-map" type="button"> no map</button></a>
+            <a href="#tbl"><button class="btn btn-primary no-map" type="button" data-toggle="collapse" data-target="#tbl" aria-expanded="false" aria-controls="tbl"> no map</button></a>
           </div>
           <div class="col">
-            <a href="#map"><button class="btn btn-success with-map" type="button" data-toggle="collapse" data-target="#displayMap" aria-expanded="false" aria-controls="collapseExample">show map</button></a>
+            <a href="#map"><button class="btn btn-success with-map" type="button" data-toggle="collapse" data-target="#displayMap" aria-expanded="false" aria-controls="displayMap">show map</button></a>
           </div>
         </div>
 
-        <div class="row " id='tbl'>
-          <table >
-              <thead>
-                  <tr>
-                    <th>Address</th>
-                    <th>Distance</th>
-                  </tr>
-                </thead>
-                <tbody class='tabledisplay'>
-
-                </tbody>
-          </table>
+        <div class="row collapse" id='tbl'>
+          <div class="col-12 class="card card-body"">
+              <table  id="theNoMap">
+                  <thead>
+                      <tr>
+                        <th>Address</th>
+                        <th>Distance</th>
+                      </tr>
+                    </thead>
+                    <tbody class='tabledisplay'>
+    
+                    </tbody>
+              </table>
+          </div>
+          
         </div>
       </div>
 
