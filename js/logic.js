@@ -25,8 +25,9 @@ function findWifi(){
         if (status == 'OK') {
           map.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
+            position: results[0].geometry.location,
             map: map,
-            position: results[0].geometry.location
+
           });
 
 
@@ -215,6 +216,15 @@ var distance= geolib.getDistance(
     });
   }
   }
+
+
+
+
+
+
+
+
+
 
 return{
   initialize,
